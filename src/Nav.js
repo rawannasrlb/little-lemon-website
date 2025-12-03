@@ -2,8 +2,8 @@ import React from 'react'
 
 const Nav = () => {
   return (
-    <nav>
-      <ul className="nav-list">
+    <nav className=''>
+      <ul className="nav-list flex flex-wrap justify-between">
         <li><a href='/about'>About</a></li>
         <li><a href='/menu'>Menu</a></li>
         <li><a href='/reservation'>Reservation</a></li>

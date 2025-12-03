@@ -3,7 +3,7 @@ import footerLogo from './assets/images/footer-logo.png'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="grid grid-cols-4 justify-between text-center">
       <img
         src={footerLogo}
         alt="Little Lemon Footer Logo"
