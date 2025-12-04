@@ -1,0 +1,28 @@
+.header-logo {
+  width: 220px;
+  height: 60px;
+}
+
+.banner-image {
+  float: right;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* lg screens */
+@media (min-width: 1024px) {
+  .banner-image {
+    height: 400px;
+    width: 300px;
+  }
+}
+
+
+/* xl screens */
+@media (min-width: 1280px) {
+  .banner-image {
+    height: 500px;
+    width: 375px;
+  }
+}
+
