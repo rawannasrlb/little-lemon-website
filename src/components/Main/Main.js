@@ -1,9 +1,9 @@
 import React from "react";
-import Banner from "./components/Main/Banner.js";
-import Specials from "./components/Main/Specials.js";
-import "./components/Main/Main.css";
-import Reviews from "./components/Main/Reviews.js";
-import About from "./components/Main/About.js";
+import Banner from "./Banner.js";
+import Specials from "./Specials.js";
+import "./Main.css";
+import Reviews from "./Reviews.js";
+import About from "./About.js";
 
 const Main = () => {
   return (

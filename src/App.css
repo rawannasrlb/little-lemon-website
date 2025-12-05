@@ -46,7 +46,7 @@ p,
 }
 
 /* sm screens */
-@media (min-width: 640px) { 
+@media (min-width: 640px) {
   .container {
     padding-left: 50px;
     padding-right: 50px;
@@ -71,7 +71,7 @@ p,
 }
 
 /* md screens */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .container {
     padding-left: 100px;
     padding-right: 100px;
