@@ -1,16 +1,38 @@
+/* navbar */
 .header-logo {
   width: 220px;
   height: 60px;
 }
 
-.banner-image {
-  float: right;
-  border-radius: 10px;
+
+/* banner */
+.image {
+  border-radius: 0.75em;
   box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 500ms ease;
+  transform-origin: center;
+}
+
+.image:hover {
+  transform: rotate(5deg) scale(1.05) ;
+  z-index: 99;
+}
+
+/* specials */
+.card {
+  background-color: #ffffff;
+  box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 0.75em;
+  transition: transform 500ms ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 /* lg screens */
 @media (min-width: 1024px) {
+  /* banner */
   .banner-image {
     height: 400px;
     width: 300px;
@@ -20,6 +42,7 @@
 
 /* xl screens */
 @media (min-width: 1280px) {
+  /* banner */
   .banner-image {
     height: 500px;
     width: 375px;
