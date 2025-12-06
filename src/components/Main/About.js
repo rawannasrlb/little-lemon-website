@@ -4,7 +4,7 @@ import restaurantImage from "../../assets/images/restaurant.jpg";
 
 const About = () => {
   return (
-    <section className="container bg-highlight-light grid grid-cols-1 items-center xl:grid-cols-2 gap-20 w-full py-[10vw]">
+    <section id="about" className="container bg-highlight-light grid grid-cols-1 items-center xl:grid-cols-2 gap-20 w-full py-[10vw]">
       {/* content for about section */}
       <div className="order-2 xl:order-1">
         <h1 className="text-primary-dark">Little Lemon</h1>

@@ -4,7 +4,7 @@ import footerLogo from "../../assets/images/footer-logo.png";
 const Footer = () => {
   return (
     <footer className="bg-primary-dark/30">
-      <div className="container grid grid-cols-2 lg:grid-cols-4 justify-between text-center gap-10 py-[10vw]">
+      <div className="container grid grid-cols-2 lg:grid-cols-4 justify-between text-center gap-10 py-[10vw] lg:py-[6vw]">
         <div className="order-4 lg:order-1">
           <img
             src={footerLogo}

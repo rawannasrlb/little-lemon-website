@@ -31,7 +31,7 @@ const dishes = [
 
 const Specials = () => {
   return (
-    <section className="container h-fit py-[15vw] flex flex-col gap-10">
+    <section id="menu" className="container h-fit py-[15vw] flex flex-col gap-10">
       <div className="flex flex-wrap justify-between items-center">
         <h2 className="leading-[0.7]">This week’s specials!</h2>
         <PrimaryButton>Order Online</PrimaryButton>

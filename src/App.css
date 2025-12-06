@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -66,7 +70,7 @@ h3 {
 
 p,
 .footer-links {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 }
 
