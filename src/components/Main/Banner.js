@@ -1,6 +1,7 @@
 import React from "react";
 import bannerImage from "../../assets/images/restaurant-food.jpg";
 import PrimaryButton from "../ui/PrimaryButton.js";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -10,12 +11,14 @@ const Banner = () => {
           <div>
             <h1 className="text-primary-light">Little Lemon</h1>
             <h2 className="text-white text-[3.25em]">Chicago</h2>
-            <p className="text-white w-[70vw] lg:w-[30vw]">
+            <p className="text-white w-[70vw] lg:w-[30vw] mt-5">
               We are a family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </p>
           </div>
-          <PrimaryButton>Reserve a Table</PrimaryButton>
+          <Link to="/reservation">
+            <PrimaryButton>Reserve a Table</PrimaryButton>
+          </Link>
         </div>
         <div className="relative hidden lg:block">
           <img

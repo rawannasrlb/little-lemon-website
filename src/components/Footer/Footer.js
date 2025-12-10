@@ -1,5 +1,7 @@
 import React from "react";
 import footerLogo from "../../assets/images/footer-logo.png";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -17,19 +19,27 @@ const Footer = () => {
           <h3 className="text-primary-dark">Navigation</h3>
           <ul className="footer-links flex flex-col gap-2 lg:gap-4">
             <li>
-              <a href="/about">About</a>
+              <HashLink smooth to="/#about">
+                About
+              </HashLink>
             </li>
             <li>
-              <a href="/menu">Menu</a>
+              <HashLink smooth to="/#menu">
+                Menu
+              </HashLink>
             </li>
             <li>
-              <a href="/reservation">Reservation</a>
+              <Link to="/reservation">Reservation</Link>
             </li>
             <li>
-              <a href="/order-online">Order Online</a>
+              <HashLink smooth to="/#order-online">
+                Order Online
+              </HashLink>
             </li>
             <li>
-              <a href="/login">Login</a>
+              <HashLink smooth to="/#login">
+                Login
+              </HashLink>
             </li>
           </ul>
         </div>
@@ -69,9 +79,9 @@ const Footer = () => {
         </div>
       </div>
       {/* copyrights for desktop */}
-        <div className="lg:pb-10 lg:flex lg:items-center lg:justify-center hidden lg:block">
-          <p className="italic">2025 © Little Lemon</p>
-        </div>
+      <div className="lg:pb-10 lg:flex lg:items-center lg:justify-center hidden">
+        <p className="italic">2025 © Little Lemon</p>
+      </div>
     </footer>
   );
 };

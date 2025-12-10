@@ -77,16 +77,16 @@ p,
 /* md screens */
 @media (min-width: 768px) {
   .container {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 80px;
+    padding-right: 80px;
   }
 }
 
 /* lg screens */
 @media (min-width: 1024px) {
   .container {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 120px;
+    padding-right: 120px;
   }
 }
 

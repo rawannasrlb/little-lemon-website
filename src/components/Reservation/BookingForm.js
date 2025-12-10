@@ -26,12 +26,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
 
   // Validate form whenever inputs change
   useEffect(() => {
-    const valid =
-      date &&
-      time &&
-      guests >= 1 &&
-      guests <= 10 &&
-      occasion;
+    const valid = date && time && guests >= 1 && guests <= 10 && occasion;
     setIsFormValid(valid);
   }, [date, time, guests, occasion]);
 
@@ -44,82 +39,98 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
   };
 
   return (
-    <div>
-      <div className="container flex flex-col justify-center items-center gap-10 py-[10vw]">
-        <h2 className="text-primary-dark">Book your Reservation!</h2>
+    <section>
+      <div className="container flex flex-col justify-center items-center gap-10 py-[7vw]">
+        <div className="flex flex-col gap-3">
+          <h1 className="hidden">Reservation Form</h1>
+          <h2 className="text-primary-dark text-center">
+            Book your Reservation!
+          </h2>
+          <h3 className="text-secondary-dark text-center">
+            Please enter the correct data
+          </h3>
+        </div>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-5 w-full lg:w-1/2"
         >
-          <label>
-            Choose date
-            <input
-              type="date"
-              value={date}
-              required
-              onChange={(e) => {
-                setDate(e.target.value);
-                dispatch({ date: new Date(e.target.value) });
-              }}
-            />
-          </label>
-
-          <label>
-            Choose time
-            <select
-              value={time}
-              required
-              onChange={(e) => setTime(e.target.value)}
-            >
-              <option value="">-- select time --</option>
-              {availableTimes.map((time, index) => (
-                <option key={index}>{time}</option>
-              ))}
-            </select>
-          </label>
-
-          <div>
-            <label>
-              Number of guests
+          <fieldset className="flex flex-col gap-5">
+            <div>
+              <label htmlFor="res-date">Choose Date</label>
+              <input
+                type="date"
+                id="res-date"
+                value={date}
+                required
+                onChange={(e) => {
+                  setDate(e.target.value);
+                  dispatch({ date: new Date(e.target.value) });
+                }}
+              />
+            </div>
+            <div>
+              <label htmlFor="res-time">Choose Time</label>
+              <select
+                id="res-time"
+                value={time}
+                required
+                onChange={(e) => setTime(e.target.value)}
+              >
+                <option value="" disabled>Select Time</option>
+                {availableTimes.map((time, index) => (
+                  <option key={index}>{time}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="guests">Number of Guests</label>
               <input
                 type="number"
+                id="guests"
                 value={guests}
                 required
                 onChange={handleGuestsNumber}
                 onBlur={() => {
-                  if (!guests) setGuestValidation("Please enter the number of guests");
+                  if (!guests)
+                    setGuestValidation("Please enter the number of guests");
                   else if (guests >= 1 && guests <= 10) setGuestValidation("");
                 }}
                 min="1"
                 max="10"
               />
-            </label>
-            {guestValidation && (
-              <span className="text-red-600">{guestValidation}</span>
-            )}
-          </div>
-
-          <label>
-            Occasion
-            <select
-              value={occasion}
-              required
-              onChange={(e) => setOccasion(e.target.value)}
-            >
-              <option value="">-- select occasion --</option>
-              <option>Birthday</option>
-              <option>Anniversary</option>
-            </select>
-          </label>
-
-          <div className="mt-5 lg:mt-10 flex justify-center">
-            <PrimaryButton type="submit" isFormValid={isFormValid} disabled={!isFormValid}>
-              Confirm Reservation
-            </PrimaryButton>
-          </div>
+              {guestValidation && (
+                <span className="text-red-600" role="alert">
+                  {guestValidation}
+                </span>
+              )}
+            </div>
+            <div>
+              <label htmlFor="occasion">Occasion</label>
+              <select
+                id="occasion"
+                value={occasion}
+                required
+                onChange={(e) => setOccasion(e.target.value)}
+              >
+                <option value="" disabled>Select Occasion</option>
+                <option>Birthday</option>
+                <option>Anniversary</option>
+              </select>
+            </div>
+            <div className="mt-5 lg:mt-10 flex justify-center">
+              <PrimaryButton
+                type="submit"
+                isFormValid={isFormValid}
+                disabled={!isFormValid}
+                aria-label="On Click"
+              >
+                Confirm Reservation
+              </PrimaryButton>
+            </div>
+          </fieldset>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

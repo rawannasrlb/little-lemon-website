@@ -1,9 +1,37 @@
 input,
 select {
+  color: rgb(104, 104, 104);
   border-radius: 0.75em;
   border: 1px solid rgb(202, 202, 202);
-  height: 3em;
+  height: 2.5em;
   width: 100%;
   padding: 0px 20px;
-  margin-top: 10px;
+  margin-top: 5px;
+}
+
+label {
+  color: theme("colors.primary.dark");
+  font-weight: 600;
+}
+
+/* Confirmed Booking Page */
+
+.reservation-table {
+  border-collapse: separate;
+  border-spacing: 20px 20px;
+}
+
+.reservation-table td:first-child {
+  color: theme("colors.primary.dark");
+  font-weight: 600;
+}
+.reservation-table td:last-child {
+  color: rgb(104, 104, 104);
+
+}
+
+@media (min-width: 768px) {
+  .reservation-table {
+    border-spacing: 50px 20px;
+  }
 }
