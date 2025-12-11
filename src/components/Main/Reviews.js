@@ -34,7 +34,7 @@ const Reviews = () => {
       <div>
         <h2>What do our customers think?</h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-10 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 2xl:gap-10 w-full">
         {reviews.map((review, index) => (
           <ReviewsCard
             key={index}

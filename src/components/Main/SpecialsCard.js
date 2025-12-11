@@ -15,7 +15,7 @@ const SpecialsCard = ({ image, name, description, price }) => {
           <h3>{name}</h3>
           <p className="text-secondary-dark font-semibold">$ {price}</p>
         </div>
-        <p className="line-clamp-2 lg:line-clamp-3">{description}</p>
+        <p className="line-clamp-2 lg:line-clamp-3 xl:line-clamp-none">{description}</p>
       </div>
       <div className="hidden lg:flex items-end gap-2 p-5">
         <p className="font-bold">Order a delivery</p>
