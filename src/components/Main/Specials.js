@@ -22,7 +22,7 @@ const dishes = [
   },
   {
     image: lemonDessert,
-    name: "Red Sauce Past",
+    name: "Lemon Dessert",
     description:
       "The famous red sauce pasta of pasta, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
     price: "8.99",
