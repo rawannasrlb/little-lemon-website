@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# Little Lemon Restaurant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive restaurant website with reservation functionality, built with React and Tailwind CSS.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Components](#components)
+- [Navigation](#navigation)
+- [Routing](#routing)
+- [Accessibility](#accessibility)
+- [Form Validation](#form-validation)
+- [Styling](#styling)
+- [Installation](#installation)
+- [Testing](#testing)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Little Lemon is a responsive restaurant website that allows users to view weekly specials, browse the menu, and make reservations. This documentation describes the app structure, features, installation, testing, accessibility measures, and how to run the project locally.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- React
+- Tailwind CSS
+- React Router (and react-router-hash-link)
+- Font Awesome (icons)
+- lucide-react (icons)
+- React Testing Library
+- Node.js / npm
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Responsive navigation (desktop + sliding mobile menu)
+- Reservation form with HTML5 and React client-side validation
+- Confirmation page showing submitted reservation data
+- Semantic HTML and ARIA attributes for accessibility
+- Social media links opening in new tabs
+- Unit tests for critical components
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Header**: Logo + Nav + MobileNav (hamburger menu)
+- **Nav**: Desktop navigation using HashLink for smooth section scroll
+- **MobileNav**: Slide-in menu with close icon
+- **BookingForm**: Reservation form with validation (date, time, guests, occasion)
+- **ConfirmedBooking**: Page displaying submitted reservation details
+- **SpecialsCard**: Weekly specials with image + description
+- **ReviewsCard**: Client reviews
+- **Footer**: Social links and contact details
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Navigation
 
-## Learn More
+- Desktop navigation shows on screens `≥ lg`
+- Mobile navigation uses hamburger menu (Lucide icon)
+- Slide-in panel from the right with close icon
+- Smooth scrolling using `react-router-hash-link`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Routing
 
-### Code Splitting
+| Route          | Description                            |
+| -------------- | -------------------------------------- |
+| `/`            | Home page (hero, specials, highlights) |
+| `/reservation` | Reservation form                       |
+| `/confirmed`   | Reservation confirmation page          |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Accessibility
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Semantic elements: `header`, `main`, `section`, `article`, `footer`
+- Inputs properly connected to labels with `htmlFor`/`id`
+- ARIA attributes where appropriate (`aria-label`, `aria-live`, `role="alert"`)
+- Keyboard-friendly and screen-reader-friendly markup
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Form Validation
 
-### Advanced Configuration
+- Required fields: Date, Time, Guests, Occasion
+- Guests must be between **1–10**
+- Client-side validation handled with React (`useState`, `useEffect`)
+- Submit button disabled until the form becomes valid
+- Error messages displayed for invalid guest count
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Tailwind CSS for layout and utilities
+- Minimal custom CSS for specific cases (e.g., table spacing)
+- Font Awesome for social icons
+- Lucide-react for hamburger / close icons
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Installation
+
+1. Clone the repository:
+   git clone <repo_url>
+2. Change directory:
+   cd little-lemon-website
+3. Install dependencies:
+   npm install
+4. Run the development server:
+   npm start
+
+## Testing
+
+- Run tests:
+  npm test
+
+- Tests include:
+  BookingForm renders and contains required fields
+  HTML5 attributes (required, min, max) present on inputs
+  Submit flow triggers submitForm with correct payload
